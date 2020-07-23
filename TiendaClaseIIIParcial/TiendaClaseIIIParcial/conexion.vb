@@ -108,7 +108,7 @@ Public Class conexion
             da = New SqlDataAdapter(cmb)
             dt = New DataTable
             With cmb.Parameters
-                .Add(New SqlParameter("@nombre", username))
+                .Add(New SqlParameter("@nombreUsuario", username))
             End With
             da.Fill(dt)
             dgv.DataSource = dt

@@ -1,5 +1,7 @@
 ﻿Imports System.Text.RegularExpressions
 Imports System.Globalization.CultureInfo
+Imports System.Security.Cryptography
+Imports System.Text
 Imports System
 Public Class Tienda
     Dim conexion As New conexion()
@@ -12,6 +14,17 @@ Public Class Tienda
     'username@midominio.com
     Private Function validarCorreo(ByVal isCorreo As String) As Boolean
         Return Regex.IsMatch(isCorreo, "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$")
+    End Function
+    Public Function Desencriptar(ByVal Input As String) As String
+
+        Dim IV() As Byte = ASCIIEncoding.ASCII.GetBytes("qualityi")
+        Dim EncryptionKey() As Byte = Convert.FromBase64String("rpaSPvIvVLlrcmtzPU9/c67Gkj7yL1S5")
+        Dim buffer() As Byte = Convert.FromBase64String(Input)
+        Dim des As TripleDESCryptoServiceProvider = New TripleDESCryptoServiceProvider
+        des.Key = EncryptionKey
+        des.IV = IV
+        Return Encoding.UTF8.GetString(des.CreateDecryptor().TransformFinalBlock(buffer, 0, buffer.Length()))
+
     End Function
 
     Private Sub limpiar()
@@ -30,8 +43,6 @@ Public Class Tienda
             txtCorreo.SelectAll()
         Else
             insertarUsuaurio()
-            MessageBox.Show("Correo valido", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
         End If
 
 
@@ -43,8 +54,8 @@ Public Class Tienda
         nombre = cadenaTexto(txtNombre.Text)
         apellido = cadenaTexto(txtApellido.Text)
         userName = txtUsername.Text
-        psw = txtPsw.Text
-        correo = txtCorreo.Text
+        psw = conexion.Encriptar(txtPsw.Text)
+        correo = LCase(txtCorreo.Text)
         estado = "activo"
         rol = cmbRol.Text
         Try
@@ -58,12 +69,8 @@ Public Class Tienda
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) 
         decri.Text = conexion.Encriptar(encri.Text)
-
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
     End Sub
 
@@ -77,7 +84,9 @@ Public Class Tienda
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        conexion.eliminarUsuario(Val(txtCodigo.Text))
+        If conexion.eliminarUsuario(Val(txtCodigo.Text)) = True Then
+            MessageBox.Show("Usuario Eliminado Correctamente", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 
     Function cadenaTexto(ByVal text As String)
@@ -89,7 +98,7 @@ Public Class Tienda
         conexion.buscarYLlenarDGV(dgv1, txtUsuarioB.Text)
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -102,6 +111,25 @@ Public Class Tienda
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) 
+
+    End Sub
+
+    Private Sub dgv1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv1.CellContentClick
+        Try
+            Dim data As DataGridViewRow = dgv1.Rows(e.RowIndex)
+            txtCodigo.Text = data.Cells(0).Value.ToString()
+            txtNombre.Text = data.Cells(1).Value.ToString()
+            txtApellido.Text = data.Cells(2).Value.ToString()
+            txtUserName.Text = data.Cells(3).Value.ToString()
+            txtPsw.Text = Desencriptar(data.Cells(4).Value.ToString())
+            cmbRol.Text = data.Cells(5).Value.ToString()
+            txtCorreo.Text = data.Cells(6).Value.ToString()
+        Catch ex As Exception
+            MessageBox.Show("no se lleno por: " + ex.ToString)
         End Try
     End Sub
 End Class

@@ -23,7 +23,6 @@ Partial Class Tienda
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -50,16 +49,10 @@ Partial Class Tienda
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.decri = New System.Windows.Forms.TextBox()
-        Me.encri = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txtcadena = New System.Windows.Forms.TextBox()
-        Me.txtprmera = New System.Windows.Forms.TextBox()
         CType(Me.dgv1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -67,39 +60,29 @@ Partial Class Tienda
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(535, 22)
+        Me.btnEliminar.Location = New System.Drawing.Point(549, 47)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(56, 19)
+        Me.btnEliminar.Size = New System.Drawing.Size(85, 31)
         Me.btnEliminar.TabIndex = 42
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(223, 19)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(56, 19)
-        Me.Button4.TabIndex = 35
-        Me.Button4.Text = "Buscar"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel6.Location = New System.Drawing.Point(299, 117)
+        Me.Panel6.Location = New System.Drawing.Point(299, 123)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(129, 4)
+        Me.Panel6.Size = New System.Drawing.Size(146, 4)
         Me.Panel6.TabIndex = 16
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(453, 52)
+        Me.btnLimpiar.Location = New System.Drawing.Point(460, 77)
         Me.btnLimpiar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(63, 19)
+        Me.btnLimpiar.Size = New System.Drawing.Size(85, 31)
         Me.btnLimpiar.TabIndex = 41
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
@@ -110,7 +93,7 @@ Partial Class Tienda
         Me.Panel5.Location = New System.Drawing.Point(299, 88)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(129, 4)
+        Me.Panel5.Size = New System.Drawing.Size(146, 4)
         Me.Panel5.TabIndex = 16
         '
         'Panel7
@@ -133,10 +116,10 @@ Partial Class Tienda
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(535, 49)
+        Me.btnModificar.Location = New System.Drawing.Point(549, 77)
         Me.btnModificar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(60, 19)
+        Me.btnModificar.Size = New System.Drawing.Size(85, 31)
         Me.btnModificar.TabIndex = 44
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
@@ -179,7 +162,6 @@ Partial Class Tienda
         '
         'cmbRol
         '
-        Me.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbRol.FormattingEnabled = True
         Me.cmbRol.Items.AddRange(New Object() {"admin", "cajero"})
         Me.cmbRol.Location = New System.Drawing.Point(87, 104)
@@ -191,10 +173,10 @@ Partial Class Tienda
         'txtCorreo
         '
         Me.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCorreo.Location = New System.Drawing.Point(299, 100)
+        Me.txtCorreo.Location = New System.Drawing.Point(299, 106)
         Me.txtCorreo.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCorreo.Name = "txtCorreo"
-        Me.txtCorreo.Size = New System.Drawing.Size(129, 13)
+        Me.txtCorreo.Size = New System.Drawing.Size(148, 13)
         Me.txtCorreo.TabIndex = 13
         '
         'txtPsw
@@ -203,7 +185,7 @@ Partial Class Tienda
         Me.txtPsw.Location = New System.Drawing.Point(299, 74)
         Me.txtPsw.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPsw.Name = "txtPsw"
-        Me.txtPsw.Size = New System.Drawing.Size(129, 13)
+        Me.txtPsw.Size = New System.Drawing.Size(148, 13)
         Me.txtPsw.TabIndex = 12
         '
         'txtUserName
@@ -218,17 +200,17 @@ Partial Class Tienda
         'dgv1
         '
         Me.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv1.Location = New System.Drawing.Point(11, 77)
+        Me.dgv1.Location = New System.Drawing.Point(6, 77)
         Me.dgv1.Name = "dgv1"
-        Me.dgv1.Size = New System.Drawing.Size(545, 150)
+        Me.dgv1.Size = New System.Drawing.Size(650, 188)
         Me.dgv1.TabIndex = 48
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(205, 18)
+        Me.Button3.Location = New System.Drawing.Point(200, 13)
         Me.Button3.Margin = New System.Windows.Forms.Padding(2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(56, 19)
+        Me.Button3.Size = New System.Drawing.Size(61, 28)
         Me.Button3.TabIndex = 43
         Me.Button3.Text = "Buscar"
         Me.Button3.UseVisualStyleBackColor = True
@@ -331,50 +313,9 @@ Partial Class Tienda
         Me.Label7.TabIndex = 45
         Me.Label7.Text = "Nombre"
         '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(442, 44)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(56, 19)
-        Me.Button2.TabIndex = 40
-        Me.Button2.Text = "Dec"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(441, 21)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(56, 19)
-        Me.Button1.TabIndex = 39
-        Me.Button1.Text = "Enc"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'decri
-        '
-        Me.decri.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.decri.Location = New System.Drawing.Point(298, 44)
-        Me.decri.Margin = New System.Windows.Forms.Padding(2)
-        Me.decri.Name = "decri"
-        Me.decri.Size = New System.Drawing.Size(129, 13)
-        Me.decri.TabIndex = 38
-        '
-        'encri
-        '
-        Me.encri.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.encri.Location = New System.Drawing.Point(298, 27)
-        Me.encri.Margin = New System.Windows.Forms.Padding(2)
-        Me.encri.Name = "encri"
-        Me.encri.Size = New System.Drawing.Size(129, 13)
-        Me.encri.TabIndex = 37
-        '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.txtprmera)
-        Me.GroupBox1.Controls.Add(Me.txtcadena)
         Me.GroupBox1.Controls.Add(Me.btnEliminar)
-        Me.GroupBox1.Controls.Add(Me.Button4)
         Me.GroupBox1.Controls.Add(Me.btnLimpiar)
         Me.GroupBox1.Controls.Add(Me.Panel6)
         Me.GroupBox1.Controls.Add(Me.Panel5)
@@ -398,21 +339,21 @@ Partial Class Tienda
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Location = New System.Drawing.Point(23, 24)
+        Me.GroupBox1.Location = New System.Drawing.Point(11, 24)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(634, 149)
+        Me.GroupBox1.Size = New System.Drawing.Size(664, 149)
         Me.GroupBox1.TabIndex = 35
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Usuario"
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(453, 22)
+        Me.btnGuardar.Location = New System.Drawing.Point(460, 47)
         Me.btnGuardar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(56, 19)
+        Me.btnGuardar.Size = New System.Drawing.Size(85, 31)
         Me.btnGuardar.TabIndex = 36
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
@@ -431,39 +372,21 @@ Partial Class Tienda
         Me.GroupBox2.Controls.Add(Me.txtUsuarioB)
         Me.GroupBox2.Controls.Add(Me.dgv1)
         Me.GroupBox2.Controls.Add(Me.Panel7)
-        Me.GroupBox2.Controls.Add(Me.Button2)
         Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.decri)
         Me.GroupBox2.Controls.Add(Me.Button3)
-        Me.GroupBox2.Controls.Add(Me.encri)
-        Me.GroupBox2.Location = New System.Drawing.Point(42, 197)
+        Me.GroupBox2.Location = New System.Drawing.Point(13, 178)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(595, 256)
+        Me.GroupBox2.Size = New System.Drawing.Size(662, 271)
         Me.GroupBox2.TabIndex = 49
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "GroupBox2"
-        '
-        'txtcadena
-        '
-        Me.txtcadena.Location = New System.Drawing.Point(453, 76)
-        Me.txtcadena.Name = "txtcadena"
-        Me.txtcadena.Size = New System.Drawing.Size(100, 20)
-        Me.txtcadena.TabIndex = 45
-        '
-        'txtprmera
-        '
-        Me.txtprmera.Location = New System.Drawing.Point(453, 107)
-        Me.txtprmera.Name = "txtprmera"
-        Me.txtprmera.Size = New System.Drawing.Size(100, 20)
-        Me.txtprmera.TabIndex = 46
+        Me.GroupBox2.Text = "Busqueda"
         '
         'Tienda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(686, 517)
+        Me.ClientSize = New System.Drawing.Size(686, 461)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -482,7 +405,6 @@ Partial Class Tienda
     End Sub
 
     Friend WithEvents btnEliminar As Button
-    Friend WithEvents Button4 As Button
     Friend WithEvents Panel6 As Panel
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents Panel5 As Panel
@@ -509,10 +431,6 @@ Partial Class Tienda
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents decri As TextBox
-    Friend WithEvents encri As TextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnGuardar As Button
     Friend WithEvents txtNombre As TextBox
