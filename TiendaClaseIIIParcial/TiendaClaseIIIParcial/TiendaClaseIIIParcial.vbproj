@@ -58,6 +58,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -73,11 +74,41 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="conexion.vb" />
-    <Compile Include="Tienda.vb">
+    <Compile Include="CLASE\frmProducto.Designer.vb">
+      <DependentUpon>frmProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CLASE\frmProducto.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tienda.Designer.vb">
+    <Compile Include="CLASE\frmRestaurarContrasenia.Designer.vb">
+      <DependentUpon>frmRestaurarContrasenia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CLASE\frmRestaurarContrasenia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLASE\frmUsuario.Designer.vb">
+      <DependentUpon>frmUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CLASE\frmUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLASE\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CLASE\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CLASE\ReporteTicket.Designer.vb">
+      <DependentUpon>ReporteTicket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CLASE\ReporteTicket.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TAREAS\conexion.vb" />
+    <Compile Include="TAREAS\Tienda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TAREAS\Tienda.Designer.vb">
       <DependentUpon>Tienda.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -98,7 +129,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Tienda.resx">
+    <EmbeddedResource Include="CLASE\frmProducto.resx">
+      <DependentUpon>frmProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLASE\frmRestaurarContrasenia.resx">
+      <DependentUpon>frmRestaurarContrasenia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLASE\frmUsuario.resx">
+      <DependentUpon>frmUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CLASE\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TAREAS\Tienda.resx">
       <DependentUpon>Tienda.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -119,6 +162,10 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CLASE\dbaTienda.txt" />
+    <Content Include="CLASE\MensajeAennviar.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

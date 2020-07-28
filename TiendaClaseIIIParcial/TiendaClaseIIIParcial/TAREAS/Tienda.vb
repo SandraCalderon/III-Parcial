@@ -69,10 +69,7 @@ Public Class Tienda
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) 
-        decri.Text = conexion.Encriptar(encri.Text)
 
-    End Sub
 
     Function fTCase(str As String) As String
         'Return cultureInfo.TextInfo.ToTitleCase(str)
@@ -98,9 +95,7 @@ Public Class Tienda
         conexion.buscarYLlenarDGV(dgv1, txtUsuarioB.Text)
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs)
 
-    End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Try
