@@ -49,6 +49,23 @@ Public Class conexion
         End Try
     End Function
 
+    Public Function mostar(dgv As DataGridView)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("mostrar", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            da = New SqlDataAdapter(cmb)
+            dt = New DataTable
+            da.Fill(dt)
+            dgv.DataSource = dt
+            conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
     Public Function Encriptar(ByVal Input As String) As String
 
         Dim IV() As Byte = ASCIIEncoding.ASCII.GetBytes("qualityi")

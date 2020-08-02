@@ -9,6 +9,7 @@ Public Class Tienda
 
     Private Sub frmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.conectar()
+        conexion.mostar(dgv1)
     End Sub
 
     'username@midominio.com
@@ -34,6 +35,9 @@ Public Class Tienda
         txtUsername.Clear()
         txtPsw.Clear()
         txtCorreo.Clear()
+        conexion.mostar(dgv1)
+        txtUsuarioB.Clear()
+        cmbRol.SelectedIndex = -1
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -43,6 +47,7 @@ Public Class Tienda
             txtCorreo.SelectAll()
         Else
             insertarUsuaurio()
+
         End If
 
 
@@ -61,6 +66,7 @@ Public Class Tienda
         Try
             If conexion.insertarUsuario(idUsuario, fTCase(nombre), fTCase(apellido), userName, psw, fTCase(rol), fTCase(estado), LCase(correo)) Then
                 MessageBox.Show("Guardado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                limpiar()
             Else
                 MessageBox.Show("Error al guardar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
@@ -101,6 +107,7 @@ Public Class Tienda
         Try
             If conexion.modificar(Val(txtCodigo.Text), fTCase(txtNombre.Text), fTCase(txtApellido.Text), txtUsername.Text, txtPsw.Text, fTCase(cmbRol.Text), LCase(txtCorreo.Text)) Then
                 MessageBox.Show("Modificado", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                limpiar()
             Else
                 MessageBox.Show("Error al modificar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
